@@ -1,4 +1,4 @@
-[![Build Status](https://drone.io/github.com/maciejmrowiec/pg_monitor/status.png)](https://drone.io/github.com/maciejmrowiec/pg_monitor/latest)
+[![Build Status](https://drone.io/github.com/maciejmrowiec/pg_monitor/status.png)](https://drone.io/github.com/maciejmrowiec/pgmonitor/latest)
 
 # **PGMonitor**
 
