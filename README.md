@@ -6,19 +6,19 @@ New Relic plugin for monitoring PostgreSQL.
 
 ###### Monitoring tuple distribution within tables (active tuples, dead tuples, free space). Intended to monitor table bloat in detail.
 
-* **Component/tuple/table/<tablename>/percent/active** relation of live tuples to total table size
-* **Component/tuple/table/<tablename>/percent/dead** relation of dead tuples to total table size
-* **Component/tuple/table/<tablename>/percent/free** relation of free space to total table size
+* **Component/tuple/table/`table_name`/percent/active** relation of live tuples to total table size
+* **Component/tuple/table/`table_name`/percent/dead** relation of dead tuples to total table size
+* **Component/tuple/table/`table_name`/percent/free** relation of free space to total table size
 * **Component/tuple/summary/percent/active** live tuples to total table size; average over all tables in database
 * **Component/tuple/summary/percent/dead** dead tuples to total table size; average over all tables in database
 * **Component/tuple/summary/percent/free** free space to total table size; average over all tables in database
 
 ###### Monitoring table and index size on disk.
 
-* **Component/disksize/table/<tablename>/table** disk space used by table; expressed in Bytes
-* **Component/disksize/table/<tablename>/index** disk space used by table indexes; expressed in Bytes
-* **Component/disksize/summary/table/<tablename>** disk space used by table; expressed in Bytes
-* **Component/disksize/summary/index/<tablename>** disk space used by table indexes; expressed in Bytes
+* **Component/disksize/table/`table_name`/table** disk space used by table; expressed in Bytes
+* **Component/disksize/table/`table_name`/index** disk space used by table indexes; expressed in Bytes
+* **Component/disksize/summary/table/`table_name`** disk space used by table; expressed in Bytes
+* **Component/disksize/summary/index/`table_name`** disk space used by table indexes; expressed in Bytes
 
 
 #### Installation
