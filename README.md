@@ -1,4 +1,4 @@
-[![Build Status](https://drone.io/github.com/maciejmrowiec/pg_monitor/status.png)](https://drone.io/github.com/maciejmrowiec/pgmonitor/latest)
+[![Build Status](https://drone.io/github.com/maciejmrowiec/pgmonitor/status.png)](https://drone.io/github.com/maciejmrowiec/pgmonitor/latest)
 
 # **PGMonitor**
 
@@ -59,7 +59,7 @@ To deamonize in backgrund you can use:
 nohup ./pgmonitor -database=<mydatabase> -key=<my_newrelic_key> >/dev/null 2>&1 &
 ```
 
-**Note:** PGMonitor requires [pgstattuple][http://www.postgresql.org/docs/9.3/static/pgstattuple.html] extension to work correctly.
+**Note:** PGMonitor requires [pgstattuple](http://www.postgresql.org/docs/9.3/static/pgstattuple.html) extension to work correctly.
 
 To enable execute in postgres shell:
 
