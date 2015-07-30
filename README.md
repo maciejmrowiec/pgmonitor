@@ -43,11 +43,12 @@ go build
 #### Usage
 
 **Usage of pgmonitor:**
-* -database="": Database name (required)
-* -interval=1: Sampling interval [min]
-* -key="": Newrelic license key (required)
-* -user="postgres": Database user name
-* -verbose=false: Verbose mode
+*  -database="": Database name (required)
+*  -host="localhost:5432": Database host
+*  -interval=1: Sampling interval [min]
+*  -key="": Newrelic license key (required)
+*  -user="postgres": Database user name
+*  -verbose=false: Verbose mode
 
 To deamonize in backgrund you can use:
 
