@@ -36,7 +36,7 @@ sudo apt-get install golang
 ```
 go get github.com/lib/pq
 go get github.com/yvasiyarov/newrelic_platform_go
-go get github.com/maciejmrowiec/pg_monitor
+go get github.com/maciejmrowiec/pgmonitor
 go build
 ```
 
