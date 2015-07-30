@@ -33,9 +33,16 @@ func main() {
 
 func OpenDatabaseConnection(database string, user string) (*sql.DB, error) {
 	connectionUri := "postgres://" + user + "@localhost:5432/" + database + "?sslmode=disable"
+	log.Println("Connecting:", connectionUri)
+
 	db, err := sql.Open("postgres", connectionUri)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	if err := db.Ping(); err != nil {
+		log.Fatal(err)
+	}
+
 	return db, err
 }

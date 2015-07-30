@@ -11,6 +11,7 @@ type AppConfig struct {
 	database    string
 	interval    int
 	user        string
+	host        string
 }
 
 func HandleUserOptions() AppConfig {
@@ -22,6 +23,7 @@ func HandleUserOptions() AppConfig {
 	flag.StringVar(&config.database, "database", "", "Database name (required)")
 	flag.IntVar(&config.interval, "interval", 1, "Sampling interval [min]")
 	flag.StringVar(&config.user, "user", "postgres", "Database user name")
+	flag.StringVar(&config.host, "host", "localhost:5432", "Database host")
 
 	flag.Parse()
 
