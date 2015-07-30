@@ -1,12 +1,12 @@
 [![Build Status](https://drone.io/github.com/maciejmrowiec/pgmonitor/status.png)](https://drone.io/github.com/maciejmrowiec/pgmonitor/latest)
 
-# **PGMonitor**
+## **PGMonitor**
 
 New Relic plugin for monitoring PostgreSQL.
 
-## Features:
+### Features:
 
-### Monitoring tuple distribution within tables (active tuples, dead tuples, free space). Intended to monitor table bloat in detail.
+#### Monitoring tuple distribution within tables (active tuples, dead tuples, free space). Intended to monitor table bloat in detail.
 
 * **Component/tuple/table/<tablename>/percent/active** relation of live tuples to total table size
 * **Component/tuple/table/<tablename>/percent/dead** relation of dead tuples to total table size
@@ -16,7 +16,7 @@ New Relic plugin for monitoring PostgreSQL.
 * **Component/tuple/summary/percent/dead** dead tuples to total table size; average over all tables in database
 * **Component/tuple/summary/percent/free** free space to total table size; average over all tables in database
 
-### Monitoring table and index size on disk.
+#### Monitoring table and index size on disk.
 
 * **Component/disksize/table/<tablename>/table** disk space used by table; expressed in Bytes
 * **Component/disksize/table/<tablename>/index** disk space used by table indexes; expressed in Bytes
@@ -25,9 +25,9 @@ New Relic plugin for monitoring PostgreSQL.
 * **Component/disksize/summary/index/<tablename>** disk space used by table indexes; expressed in Bytes
 
 
-## Installation
+### Installation
 
-### Dependencies
+#### Dependencies
 
 Requires golang toolchain.
 
@@ -35,7 +35,7 @@ Requires golang toolchain.
 sudo apt-get install golang
 ```
 
-### Build
+#### Build
 
 ```
 go get github.com/lib/pq
@@ -44,7 +44,7 @@ go get github.com/maciejmrowiec/pg_monitor
 go build
 ```
 
-## Usage
+### Usage
 
 **Usage of pgmonitor:**
 * -database="": Database name (required)
