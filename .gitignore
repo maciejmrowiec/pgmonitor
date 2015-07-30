@@ -2,7 +2,7 @@
 *.o
 *.a
 *.so
-pg_monitor_newrelic
+pgmonitor
 
 # Folders
 _obj
