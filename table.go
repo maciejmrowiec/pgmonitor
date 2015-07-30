@@ -36,7 +36,7 @@ func TableDiskSize(db *sql.DB, tableName string) (float64, error) {
 		return 0, err
 	}
 
-	return size / 1000, nil
+	return size, nil
 }
 
 func TableIndexesDiskSize(db *sql.DB, tableName string) (float64, error) {
