@@ -6,9 +6,9 @@ import (
 )
 
 func UserTables(db *sql.DB) ([]string, error) {
-	sql := "SELECT relname FROM pg_catalog.pg_stat_user_tables"
+	query := "SELECT relname FROM pg_catalog.pg_stat_user_tables"
 
-	rows, err := db.Query(sql)
+	rows, err := db.Query(query)
 	if err != nil {
 		return nil, err
 	}
@@ -17,35 +17,37 @@ func UserTables(db *sql.DB) ([]string, error) {
 
 	var tables []string
 	for rows.Next() {
-		var table string
+		var table sql.NullString
 		if err := rows.Scan(&table); err != nil {
 			return nil, err
 		}
 
-		tables = append(tables, table)
+		if table.Valid {
+			tables = append(tables, table.String)
+		}
 	}
 
 	return tables, nil
 }
 
 func TableDiskSize(db *sql.DB, tableName string) (float64, error) {
-	sql := "select pg_table_size($1);"
+	query := "select pg_table_size($1);"
 
-	var size float64
-	if err := db.QueryRow(sql, tableName).Scan(&size); err != nil {
+	var size sql.NullFloat64
+	if err := db.QueryRow(query, tableName).Scan(&size); err != nil {
 		return 0, err
 	}
 
-	return size, nil
+	return size.Float64, nil
 }
 
 func TableIndexesDiskSize(db *sql.DB, tableName string) (float64, error) {
-	sql := "select pg_indexes_size($1);"
+	query := "select pg_indexes_size($1);"
 
-	var size float64
-	if err := db.QueryRow(sql, tableName).Scan(&size); err != nil {
+	var size sql.NullFloat64
+	if err := db.QueryRow(query, tableName).Scan(&size); err != nil {
 		return 0, err
 	}
 
-	return size, nil
+	return size.Float64, nil
 }

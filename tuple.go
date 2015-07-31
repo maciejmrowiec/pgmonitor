@@ -6,34 +6,34 @@ import (
 )
 
 func TupleFreePercent(db *sql.DB, tableName string) (float64, error) {
-	sql := "SELECT free_percent FROM pgstattuple($1)"
+	query := "SELECT free_percent FROM pgstattuple($1)"
 
-	var active_percent float64
-	if err := db.QueryRow(sql, tableName).Scan(&active_percent); err != nil {
+	var percent sql.NullFloat64
+	if err := db.QueryRow(query, tableName).Scan(&percent); err != nil {
 		return 0, err
 	}
 
-	return active_percent, nil
+	return percent.Float64, nil
 }
 
 func TupleActivePercent(db *sql.DB, tableName string) (float64, error) {
-	sql := "SELECT tuple_percent FROM pgstattuple($1)"
+	query := "SELECT tuple_percent FROM pgstattuple($1)"
 
-	var active_percent float64
-	if err := db.QueryRow(sql, tableName).Scan(&active_percent); err != nil {
+	var percent sql.NullFloat64
+	if err := db.QueryRow(query, tableName).Scan(&percent); err != nil {
 		return 0, err
 	}
 
-	return active_percent, nil
+	return percent.Float64, nil
 }
 
 func TupleDeadPercent(db *sql.DB, tableName string) (float64, error) {
-	sql := "SELECT dead_tuple_percent FROM pgstattuple($1)"
+	query := "SELECT dead_tuple_percent FROM pgstattuple($1)"
 
-	var active_percent float64
-	if err := db.QueryRow(sql, tableName).Scan(&active_percent); err != nil {
+	var percent sql.NullFloat64
+	if err := db.QueryRow(query, tableName).Scan(&percent); err != nil {
 		return 0, err
 	}
 
-	return active_percent, nil
+	return percent.Float64, nil
 }
