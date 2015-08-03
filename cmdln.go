@@ -2,8 +2,13 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
+	"os"
 )
+
+// build number set on during linking
+var minversion string
 
 type AppConfig struct {
 	verbose     bool
@@ -12,6 +17,7 @@ type AppConfig struct {
 	interval    int
 	user        string
 	host        string
+	version     bool
 }
 
 func HandleUserOptions() AppConfig {
@@ -24,8 +30,14 @@ func HandleUserOptions() AppConfig {
 	flag.IntVar(&config.interval, "interval", 1, "Sampling interval [min]")
 	flag.StringVar(&config.user, "user", "postgres", "Database user name")
 	flag.StringVar(&config.host, "host", "localhost:5432", "Database host")
+	flag.BoolVar(&config.version, "version", false, "Print version")
 
 	flag.Parse()
+
+	if config.version {
+		fmt.Printf("Build: %s\n", minversion)
+		os.Exit(0)
+	}
 
 	if config.newRelicKey == "" ||
 		config.database == "" {
