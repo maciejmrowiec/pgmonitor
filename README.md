@@ -1,4 +1,4 @@
-## **PGMonitor** [![Build Status](https://drone.io/github.com/maciejmrowiec/pgmonitor/status.png)](https://drone.io/github.com/maciejmrowiec/pgmonitor/latest)
+## **PGMonitor** [![Build Status](https://drone.io/github.com/maciejmrowiec/pgmonitor/status.png)](https://drone.io/github.com/maciejmrowiec/pgmonitor/latest) [![wercker status](https://app.wercker.com/status/93ee1295fe9986db87231dd9e78a41b3/m "wercker status")](https://app.wercker.com/project/bykey/93ee1295fe9986db87231dd9e78a41b3)
 
 New Relic plugin for monitoring PostgreSQL.
 
