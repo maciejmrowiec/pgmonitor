@@ -3,7 +3,7 @@
 # If you want Google's container you would reference google/golang
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
-box: golang
+box: wercker/golang
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
@@ -29,7 +29,7 @@ build:
     # Gets the dependencies
     - script:
         name: go get
-        code: |
+        code: |-
 	  go get github.com/lib/pq
           go get github.com/yvasiyarov/newrelic_platform_go
 
