@@ -47,7 +47,7 @@ build:
 
     - script: 
             name: move executable
-            code: mv $GOPATH/bin/* $WERCKER_OUTPUT_DIR
+            code: mv ./* $WERCKER_OUTPUT_DIR
 
 deploy:
     steps:
