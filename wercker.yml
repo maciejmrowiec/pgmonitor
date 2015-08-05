@@ -37,7 +37,7 @@ build:
     - script:
         name: go build
         code: |
-          go build ./...
+          GOOS=linux GOARCH=amd64 go build -ldflags "-X main.minversion `echo $WERCKER_GIT_COMMIT`" ./... 
 
     # Test the project
     - script:
