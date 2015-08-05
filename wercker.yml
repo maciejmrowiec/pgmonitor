@@ -29,8 +29,12 @@ build:
     # Gets the dependencies
     - script:
         name: go get
-        code: |-
+        code: |
 	  go get github.com/lib/pq
+	  
+    - script:
+        name: go get
+        code: |
           go get github.com/yvasiyarov/newrelic_platform_go
 
     # Build the project
