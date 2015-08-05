@@ -45,3 +45,12 @@ build:
         code: |
           go test ./...
 
+    - script: 
+            name: move executable
+            code: mv $GOPATH/bin/* $WERCKER_OUTPUT_DIR
+
+deploy:
+    steps:
+        - script:
+            name: list files
+            code: ls -l ./
